@@ -9,6 +9,26 @@ import {
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY)
 
+const { data } = supabase.auth.onAuthStateChange((event, session) => {
+  console.log(event, session)
+
+  // if (event === 'INITIAL_SESSION') {
+  //   // handle initial session
+  // } else if (event === 'SIGNED_IN') {
+  //   // handle sign in event
+  // } else if (event === 'SIGNED_OUT') {
+  //   // handle sign out event
+  // } else if (event === 'PASSWORD_RECOVERY') {
+  //   // handle password recovery event
+  // } else if (event === 'TOKEN_REFRESHED') {
+  //   // handle token refreshed event
+  // } else if (event === 'USER_UPDATED') {
+  //   // handle user updated event
+  // }
+
+
+})
+
 function LoginPage() {
   
   const location = useLocation();
@@ -16,6 +36,11 @@ function LoginPage() {
   const redirectUrl = queryParams.get('redirect-url');
 
   console.log('redirectUrl', redirectUrl);
+
+
+
+  // // call unsubscribe to remove the callback
+  // data.subscription.unsubscribe()
 
   return (
     <div>
@@ -27,8 +52,10 @@ function LoginPage() {
       <Auth
         supabaseClient={supabase}
         redirectTo={redirectUrl ?? import.meta.env.VITE_APP_URL}
-        // view='magic_link'
-        view='verify_otp'
+        view='magic_link'
+        // magicLink={true}
+        // view='verify_otp'
+        showLinks={false}
         appearance={{ 
           theme: ThemeSupa,
           // variables: {
