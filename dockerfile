@@ -34,5 +34,5 @@ WORKDIR /app
 COPY package.json .
 RUN npm i
 COPY . .
-EXPOSE 5173
+EXPOSE 6443
 CMD ["npm", "run", "preview","--","--host","0.0.0.0"]
