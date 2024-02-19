@@ -5,8 +5,8 @@ services:
     ports:
       - '6443:6443'
     networks:
-      - sever-network
+      - server-network
 
 networks:
-  sever-network:
+  server-network:
     external: true
