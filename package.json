@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "serve": "serve -s dist -p 6433"
+    "serve": "serve -s dist -p 6443"
   },
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.7",
