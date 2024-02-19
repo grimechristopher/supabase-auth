@@ -6,6 +6,12 @@ services:
       - '6443:6443'
     networks:
       - server-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.authportal.rule=Host(`auth.chrisgrime.com`)
+      - traefik.http.routers.authportal.entrypoints=websecure
+      - traefik.http.routers.authportal.tls.certresolver=myresolver
+
 
 networks:
   server-network:
