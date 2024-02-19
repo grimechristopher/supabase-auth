@@ -13,7 +13,7 @@ services:
       - traefik.http.routers.authportal.entrypoints=websecure
       - traefik.http.routers.authportal.tls.certresolver=myresolver
     volumes:
-      # - /home/cg-auth/nginx.conf:/etc/nginx/conf.d/default.conf
+      - /home/cg-auth/nginx.conf:/etc/nginx/nginx.conf
       - /home/cg-auth/html:/usr/share/nginx/html
     # volumes:
       # - "/app/node_modules"
