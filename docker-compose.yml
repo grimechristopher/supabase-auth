@@ -15,7 +15,8 @@ services:
     volumes:
       - "/app/node_modules"
       - /home/cg-auth:/app
-
+    env_file:
+      - /home/cg-auth/.env
 networks:
   server-network:
     external: true
