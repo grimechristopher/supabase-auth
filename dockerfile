@@ -7,7 +7,7 @@ COPY package*.json /app
 # Install dependencies
 RUN npm install
 # Copy the rest of the app
-COPY . .
+COPY . /app
 # Build the React app for production
 RUN npm run build
 
