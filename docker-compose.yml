@@ -12,9 +12,9 @@ services:
       - traefik.http.routers.authportal.rule=Host(`auth.chrisgrime.com`)
       - traefik.http.routers.authportal.entrypoints=websecure
       - traefik.http.routers.authportal.tls.certresolver=myresolver
-    volumes:
+    # volumes:
       # - /home/cg-auth/nginx.conf:/etc/nginx/nginx.conf
-      - /home/cg-auth/html:/usr/share/nginx/html
+      # - /home/cg-auth/html:/usr/share/nginx/html
     # volumes:
       # - "/app/node_modules"
       # - /home/cg-auth:/app
