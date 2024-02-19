@@ -13,6 +13,7 @@ services:
       - traefik.http.routers.authportal.entrypoints=websecure
       - traefik.http.routers.authportal.tls.certresolver=myresolver
     volumes:
+      - "/app/node_modules"
       - /home/cg-auth:/app
 
 networks:
