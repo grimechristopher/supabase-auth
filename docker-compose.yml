@@ -1,6 +1,7 @@
 version: '3'
 services:
   cg-auth:
+    container_name: cg-auth
     build: .
     ports:
       - '6443:6443'
