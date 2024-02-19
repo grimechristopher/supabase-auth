@@ -4,7 +4,7 @@ services:
     container_name: cg-auth
     build: .
     ports:
-      - '6443:6443'
+      - '6443:80'
     networks:
       - server-network
     labels:
