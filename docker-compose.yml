@@ -16,8 +16,8 @@ services:
       - "/app/node_modules"
       - /home/cg-auth:/app
       - /home/cg-auth/.env:/app/.env
-    env_file:
-      - /app/.env
+    # env_file:
+    #   - /app/.env
 networks:
   server-network:
     external: true
