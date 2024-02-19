@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cg-auth:
+    build: .
+    ports:
+      - '6443:6443'
+    networks:
+      - sever-network
+
+networks:
+  sever-network:
+    external: true
