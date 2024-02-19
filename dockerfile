@@ -14,8 +14,8 @@ RUN npm run build
 
 # Step 2: Set up the production environment
 FROM nginx:stable-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 # Expose the port your app runs on
 # EXPOSE 6443
 # # Command to run the application
