@@ -14,7 +14,7 @@ services:
       - traefik.http.routers.authportal.tls.certresolver=myresolver
     volumes:
       - "/app/node_modules"
-      - /home/cg-auth:/app
+      # - /home/cg-auth:/app
       - /home/cg-auth/.env:/app/.env
     # env_file:
     #   - /app/.env
