@@ -15,7 +15,7 @@ services:
       - traefik.http.routers.authportal.entrypoints=websecure
       - traefik.http.routers.authportal.tls.certresolver=myresolver
     volumes:
-      - /home/auth/.env:/app/.env
+      - /home/auth/:/usr/share/nginx/html/
 networks:
   server-network:
     external: true
