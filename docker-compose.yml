@@ -2,7 +2,9 @@ version: '3'
 services:
   cg-auth:
     container_name: cg-auth
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - '6443:6443'
     networks:
@@ -12,15 +14,8 @@ services:
       - traefik.http.routers.authportal.rule=Host(`auth.chrisgrime.com`)
       - traefik.http.routers.authportal.entrypoints=websecure
       - traefik.http.routers.authportal.tls.certresolver=myresolver
-    # volumes:
-      # - /home/cg-auth/nginx.conf:/etc/nginx/nginx.conf
-      # - /home/cg-auth/html:/usr/share/nginx/html
-    # volumes:
-      # - "/app/node_modules"
-      # - /home/cg-auth:/app
-      # - /home/cg-auth/.env:/app/.env
-    # env_file:
-    #   - /app/.env
+    volumes:
+      - /home/auth/.env:/app/.env
 networks:
   server-network:
     external: true
