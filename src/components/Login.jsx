@@ -40,7 +40,7 @@ function LoginWidget() {
 
     const cookieOptions = {
       path: '/',
-      domain: window.location.hostname,
+      domain: import.meta.env.VITE_SITE_DOMAIN ?? window.location.hostname,
       expires: 1, // 1 day
       sameSite: 'Lax',
       secure: import.meta.env.VITE_ENVIRONEMENT === "Local" ? false : true
